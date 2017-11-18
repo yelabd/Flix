@@ -54,6 +54,7 @@
                                             <outlet property="decscriptionLabel" destination="Evy-6t-Ied" id="cDu-mU-Com"/>
                                             <outlet property="posterView" destination="kFN-ez-k33" id="95c-dG-aSG"/>
                                             <outlet property="titleLabel" destination="SLf-PM-p2e" id="k8W-Xf-Bsn"/>
+                                            <segue destination="lss-Xh-zOL" kind="show" id="4Qe-oC-Ph6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -70,6 +71,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="476" y="132.68365817091455"/>
+        </scene>
+        <!--Single Movie View Controller-->
+        <scene sceneID="Yw8-Ju-HPv">
+            <objects>
+                <viewController id="lss-Xh-zOL" customClass="SingleMovieViewController" customModule="Flix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QXX-Eg-y0H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5wE-5v-bXZ">
+                                <rect key="frame" x="0.0" y="377" width="375" height="290"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TUa-2M-Lue">
+                                <rect key="frame" x="17" y="291" width="116" height="155"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TMH-jO-Fda">
+                                <rect key="frame" x="0.0" y="64" width="375" height="316"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="gn9-Sh-Dgf"/>
+                    </view>
+                    <connections>
+                        <outlet property="backdropView" destination="TMH-jO-Fda" id="PfM-gH-C6n"/>
+                        <outlet property="posterView" destination="TUa-2M-Lue" id="PV5-U8-6UE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LzG-39-yNX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1232.8" y="132.68365817091455"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="14t-iZ-X4t">

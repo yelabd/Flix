@@ -14,13 +14,17 @@ struct Movie {
     let releaseDate: String
     let description: String
     let posterPath: URL
+    let backDropPath: URL
     
     
     init(json : JSON){
         self.title = json["title"].stringValue
         self.description = json["overview"].stringValue
-        self.releaseDate = json["releaseData"].stringValue
+        self.releaseDate = json["release_data"].stringValue
         self.posterPath = URL(string: "https://image.tmdb.org/t/p/w500" + json["poster_path"].stringValue)!
+        self.backDropPath = URL(string: "https://image.tmdb.org/t/p/w500" + json["backdrop_path"].stringValue)!
+        
+        
         
     }
     
