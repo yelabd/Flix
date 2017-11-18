@@ -7,8 +7,10 @@ target 'Flix' do
 
   # Pods for Flix
   pod 'Alamofire'
+  pod 'AlamofireImage'
   pod 'SwiftyJSON'
-
+  pod 'MBProgressHUD'
+  
   target 'FlixTests' do
     inherit! :search_paths
     # Pods for testing
