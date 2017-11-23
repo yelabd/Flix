@@ -11,16 +11,17 @@ import AlamofireImage
 
 class SingleMovieViewController: UIViewController {
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var backdropView: UIImageView!
+    @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var posterView: UIImageView!
-    var movie: Movie? {
-        didSet {
-            populate()
-        }
-    }
+    var movie: Movie?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        populate()
 
         // Do any additional setup after loading the view.
     }
@@ -31,9 +32,17 @@ class SingleMovieViewController: UIViewController {
     }
     
     func populate(){
-        print(self.movie?.posterPath)
-        //self.posterView.af_setImage(withURL: (self.movie?.posterPath)!)
-        //self.backdropView.af_setImage(withURL: (self.movie?.backDropPath)!)
+       
+        if let posterPath = self.movie?.posterPath,let backdropPath = self.movie?.backDropPath {
+            self.posterView.af_setImage(withURL: posterPath)
+            self.backdropView.af_setImage(withURL: backdropPath)
+            
+        }
+        
+        titleLabel.text = self.movie?.title
+        releaseDateLabel.text = self.movie?.releaseDate
+        overviewLabel.text = self.movie?.description
+       
     }
     
 

@@ -48,7 +48,6 @@ class NowPlayingViewController: UIViewController {
         let url = baseURL + "now_playing?api_key="+apiKey
         
         if isFirst {
-            print("adding hud")
             MBProgressHUD.showAdded(to: self.view, animated: true)
         }
         
@@ -124,6 +123,10 @@ extension NowPlayingViewController: UITableViewDelegate, UITableViewDataSource {
         cell.posterView.af_setImage(withURL: movie.posterPath)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     
