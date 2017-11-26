@@ -41,6 +41,7 @@ class SingleMovieViewController: UIViewController {
         
         titleLabel.text = self.movie?.title
         releaseDateLabel.text = self.movie?.releaseDate
+        print(self.movie?.releaseDate)
         overviewLabel.text = self.movie?.description
        
     }

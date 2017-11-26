@@ -21,7 +21,7 @@ struct Movie {
     init(json : JSON){
         self.title = json["title"].stringValue
         self.description = json["overview"].stringValue
-        self.releaseDate = json["release_data"].stringValue
+        self.releaseDate = json["release_date"].stringValue
         self.posterPath = URL(string: "https://image.tmdb.org/t/p/w500" + json["poster_path"].stringValue)!
         self.backDropPath = URL(string: "https://image.tmdb.org/t/p/w500" + json["backdrop_path"].stringValue)!
         self.posterPathString = "https://image.tmdb.org/t/p/w500" + json["poster_path"].stringValue
