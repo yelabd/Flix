@@ -33,7 +33,6 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLf-PM-p2e">
                                                     <rect key="frame" x="108" y="8" width="259" height="21"/>
-                                                    <color key="backgroundColor" red="0.48059844070000002" green="0.75327795740000003" blue="0.47924533139999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -47,7 +46,6 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evy-6t-Ied">
                                                     <rect key="frame" x="108" y="37" width="259" height="20.5"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -92,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="132.68365817091455"/>
+            <point key="canvasLocation" x="551" y="-642"/>
         </scene>
         <!--Superhero-->
         <scene sceneID="kYh-3G-TZf">
@@ -129,6 +127,7 @@
                                         <size key="customSize" width="179" height="245"/>
                                         <connections>
                                             <outlet property="posterView" destination="a1d-A7-gUd" id="B1r-Qx-GdK"/>
+                                            <segue destination="lss-Xh-zOL" kind="show" id="QaR-gw-8ev"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -146,6 +145,58 @@
             </objects>
             <point key="canvasLocation" x="476" y="1065.5172413793105"/>
         </scene>
+        <!--Superhero-->
+        <scene sceneID="GZD-OB-byh">
+            <objects>
+                <viewController id="DLK-9I-d8p" customClass="NowPlayingViewController" customModule="Flix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pld-OC-FzN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="r3q-yA-9rw">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="0.0" id="R3x-VN-HCf">
+                                    <size key="itemSize" width="179" height="245"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="10" maxX="5" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="movieCollectionCell" id="Xch-Kf-Hpg" customClass="MovieCollectionCell" customModule="Flix" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="10" width="179" height="245"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="179" height="245"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6lN-0Z-Aex">
+                                                    <rect key="frame" x="0.0" y="0.0" width="179" height="245"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <size key="customSize" width="179" height="245"/>
+                                        <connections>
+                                            <outlet property="posterView" destination="6lN-0Z-Aex" id="gnY-zS-7BA"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="gEZ-8J-wxU"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Superhero" id="efj-BI-8CM"/>
+                    <connections>
+                        <outlet property="collectionView" destination="r3q-yA-9rw" id="0f2-Nl-eLB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sle-Ap-R82" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476" y="133"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ona-26-G58">
             <objects>
@@ -156,7 +207,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="wpQ-78-1ku" kind="relationship" relationship="viewControllers" id="6M5-7C-P0d"/>
                         <segue destination="oQW-gh-aPn" kind="relationship" relationship="viewControllers" id="ChI-9B-6gV"/>
                     </connections>
                 </tabBarController>
@@ -196,7 +246,6 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKV-VO-zzA">
                                 <rect key="frame" x="140" y="300.5" width="227" height="17"/>
-                                <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -252,7 +301,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sbT-N9-ywQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-319" y="133"/>
+            <point key="canvasLocation" x="-244" y="-642"/>
         </scene>
         <!--Superhero-->
         <scene sceneID="SxN-68-3Cb">
@@ -278,4 +327,7 @@
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="QaR-gw-8ev"/>
+    </inferredMetricsTieBreakers>
 </document>

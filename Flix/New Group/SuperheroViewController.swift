@@ -46,6 +46,8 @@ class SuperheroViewController: UIViewController {
             
             let json = JSON(value)
             
+            print(json)
+            
             let movies = json["results"].arrayValue
             
             for movie in movies {
@@ -60,15 +62,24 @@ class SuperheroViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! MovieCollectionCell
+        
+        let destionation = segue.destination as! SingleMovieViewController
+        
+        let item = collectionView.indexPath(for: cell)?.item
+        
+        let selectedMovie = movies[item!]
+        
+        destionation.movie = selectedMovie
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
 
