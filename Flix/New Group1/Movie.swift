@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-struct Movie {
+class Movie {
     let title: String
     let releaseDate: String
     let description: String
@@ -28,6 +28,27 @@ struct Movie {
         
         
         
+    }
+    
+    init(dictionary: [String: Any]) {
+        self.title = dictionary["title"] as? String ?? "No title"
+        self.description = dictionary["overview"] as! String
+        self.releaseDate = dictionary["release_date"] as! String
+        self.posterPath = URL(string: "https://image.tmdb.org/t/p/w500" + (dictionary["poster_path"] as! String))!
+        self.backDropPath = URL(string: "https://image.tmdb.org/t/p/w500" + (dictionary["backdrop_path"] as! String))!
+        self.posterPathString = "https://image.tmdb.org/t/p/w500" + (dictionary["poster_path"] as! String)
+        
+        // Set the rest of the properties
+    }
+    
+    class func movies(dictionaries: [[String: Any]]) -> [Movie] {
+        var movies: [Movie] = []
+        for dictionary in dictionaries {
+            let movie = Movie(dictionary: dictionary)
+            movies.append(movie)
+        }
+        
+        return movies
     }
     
 }
